@@ -75,31 +75,31 @@ public class Employee {
             this.employee = new Employee();
         }
 
-        public void setName() {
-            employee.setName("name");
+        public void setName(String name) {
+            this.employee.setName(name);
         }
 
-        public void setLastName() {
-            employee.setLastName("lastName");
+        public void setLastName(String lastName) {
+            employee.setLastName(lastName);
         }
 
-        public void setPosition() {
-            employee.setPosition("pos");
+        public void setPosition(String pos) {
+            employee.setPosition(pos);
         }
 
-        public void setPhone() {
-            employee.setPhone("+346665");
+        public void setPhone(String phone) {
+            employee.setPhone(phone);
         }
 
-        public void setEmail() {
-            employee.setEmail("kdjsk@gmail.com");
+        public void setEmail(String email) {
+            employee.setEmail(email);
         }
 
-        public void setCarNumber() {
-            employee.setCarNumber("27381");
+        public void setCarNumber(String number) {
+            employee.setCarNumber(number);
         }
 
-        public Employee getEmployee() {
+        public Employee build() {
             return this.employee;
         }
     }
