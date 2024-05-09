@@ -13,7 +13,9 @@ public class H2ConnectionFactory implements ConnectionFactory {
     public Connection createConnection() {
         Properties properties = new Properties();
         try{
-            properties.load(new FileInputStream("h2database.properties"));
+            String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+            String appConfigPath = rootPath + "h2database.properties";
+            properties.load(new FileInputStream(appConfigPath));
             Class.forName(properties.getProperty("jdbc_driver"));
             return DriverManager.getConnection(
                     properties.getProperty("db_url"),
