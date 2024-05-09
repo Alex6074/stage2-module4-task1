@@ -69,6 +69,38 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
-        // Write your code here!
+        private Employee employee;
+
+        public EmployeeBuilder() {
+            this.employee = new Employee();
+        }
+
+        public void setName() {
+            employee.setName("name");
+        }
+
+        public void setLastName() {
+            employee.setLastName("lastName");
+        }
+
+        public void setPosition() {
+            employee.setPosition("pos");
+        }
+
+        public void setPhone() {
+            employee.setPhone("+346665");
+        }
+
+        public void setEmail() {
+            employee.setEmail("kdjsk@gmail.com");
+        }
+
+        public void setCarNumber() {
+            employee.setCarNumber("27381");
+        }
+
+        public Employee getEmployee() {
+            return this.employee;
+        }
     }
 }
