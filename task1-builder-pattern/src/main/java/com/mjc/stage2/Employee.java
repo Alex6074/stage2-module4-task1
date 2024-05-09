@@ -16,6 +16,15 @@ public class Employee {
     public Employee() {
     }
 
+    public Employee(EmployeeBuilder builder) {
+        this.name = builder.name;
+        this.lastName = builder.lastName;
+        this.position = builder.position;
+        this.phone = builder.phone;
+        this.email = builder.email;
+        this.carNumber = builder.carNumber;
+    }
+
     public String getName() {
         return name;
     }
@@ -69,38 +78,45 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
-        private Employee employee;
+        private String name;
+        private String lastName;
+        private String position;
+        private String phone;
+        private String email;
+        private String carNumber;
 
-        public EmployeeBuilder() {
-            this.employee = new Employee();
+        public EmployeeBuilder setName(String name) {
+            this.name = name;
+            return this;
         }
 
-        public void setName(String name) {
-            this.employee.setName(name);
+        public EmployeeBuilder setLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
         }
 
-        public void setLastName(String lastName) {
-            employee.setLastName(lastName);
+        public EmployeeBuilder setPosition(String position) {
+            this.position = position;
+            return this;
         }
 
-        public void setPosition(String pos) {
-            employee.setPosition(pos);
+        public EmployeeBuilder setEmail(String email) {
+            this.email = email;
+            return this;
         }
 
-        public void setPhone(String phone) {
-            employee.setPhone(phone);
+        public EmployeeBuilder setPhone(String phone) {
+            this.phone = phone;
+            return this;
         }
 
-        public void setEmail(String email) {
-            employee.setEmail(email);
-        }
-
-        public void setCarNumber(String number) {
-            employee.setCarNumber(number);
+        public EmployeeBuilder setCarNumber(String carNumber) {
+            this.carNumber = carNumber;
+            return this;
         }
 
         public Employee build() {
-            return this.employee;
+            return new Employee(this);
         }
     }
 }
